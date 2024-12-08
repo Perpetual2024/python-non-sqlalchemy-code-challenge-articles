@@ -7,6 +7,7 @@ class Article:
         self.author = author
         self.magazine = magazine
         self.title = title
+        Article.all.append(self)
     
         
         
