@@ -25,14 +25,11 @@ class Article:
                     ValueError("Title must be between 5 and 50 characters")
             else:
                 TypeError("Title must be a string")
+
+    @property
+    def author(self)  :
+        return self._author         
             
-
-
-
-        
-
-
-
         
 class Author:
     def __init__(self, name):
