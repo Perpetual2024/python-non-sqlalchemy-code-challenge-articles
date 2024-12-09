@@ -28,8 +28,14 @@ class Article:
 
     @property
     def author(self)  :
-        return self._author         
-            
+        return self._author 
+    @author.setter
+    def author(self, new_author):
+        if isinstance (new_author, str):
+            self._author = new_author
+
+        else :
+            TypeError("Author must be a string")
         
 class Author:
     def __init__(self, name):
