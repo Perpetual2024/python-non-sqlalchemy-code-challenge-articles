@@ -7,36 +7,25 @@ class Article:
         self.magazine = magazine
         self.title = title
         Article.all.append(self)
-    
+
     @property
     def title(self):
-        return self._title 
+        return self._title   
 
     @title.setter
     def title(self, new_title):
-        self._title = new_title
         if hasattr(self, "title"):
-            AttributeError("Tittle cannot be changed")
+            AttributeError("Title cannot be changed")
         else:
-            if isinstance (new_title, str):
-                if 5 <= len(new_title) <= 50:
-                  self._title = new_title    
-                else:
-                    ValueError("Title must be between 5 and 50 characters")
+            if isinstance(new_title, str):
+               if 5 <=  len(new_title ) <=50:
+                self._title = new_title
+               else:
+                ValueError("Title must be between 5 and 50 characters")
             else:
                 TypeError("Title must be a string")
 
-    @property
-    def author(self)  :
-        return self._author 
-    @author.setter
-    def author(self, new_author):
-        if isinstance (new_author, str):
-            self._author = new_author
-
-        else :
-            TypeError("Author must be a string")
-        
+    
 class Author:
     def __init__(self, name):
         self.name = name
