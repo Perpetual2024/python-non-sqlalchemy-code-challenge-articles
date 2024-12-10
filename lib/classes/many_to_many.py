@@ -71,7 +71,7 @@ class Author:
 
 
     def articles(self):
-        pass
+        return [article for article in Article.all if self == article.author]
 
     def magazines(self):
         pass
