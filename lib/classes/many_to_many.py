@@ -56,6 +56,11 @@ class Author:
     def name(self):
         return self._name
 
+    @name.setter
+    def name(self, new_name):
+        if hasattr(self, "name"):
+            AttributeError("Name cannot be changed")
+
     def articles(self):
         pass
 
