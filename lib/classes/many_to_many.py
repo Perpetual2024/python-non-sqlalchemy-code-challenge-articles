@@ -96,6 +96,21 @@ class Magazine:
         self.category = category
         Magazine.all.append(self)
 
+
+    @property
+    def name(self):
+        return self._name 
+
+    @name.setter
+    def name(self, new_name):
+        if isinstance(new_name, str):
+            if 2 <= len(new_name) <= 16 :
+                self._name = new_name  
+            else:
+                ValueError("Name must be between 2 and 16 characters")
+        else:
+            TypeError("Name must be a string")                 
+
     def articles(self):
         pass
 
