@@ -81,6 +81,10 @@ class Author:
 
     def topic_areas(self):
         topic_areas = list({magazine.category for magazine in self.magazines()})
+        if topic_areas:
+            return topic_areas
+        else:
+            return None
 
 class Magazine:
     def __init__(self, name, category):
