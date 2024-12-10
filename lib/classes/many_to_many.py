@@ -60,6 +60,15 @@ class Author:
     def name(self, new_name):
         if hasattr(self, "name"):
             AttributeError("Name cannot be changed")
+        else:
+            if isinstance(new_name, str):
+                if len(new_name):
+                    self._name = new_name
+                else:
+                    ValueError("Name must be longer than 0 characters")
+            else:
+                    TypeError("Name must be a string")
+
 
     def articles(self):
         pass
