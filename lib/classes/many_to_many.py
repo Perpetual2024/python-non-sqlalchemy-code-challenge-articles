@@ -129,10 +129,27 @@ class Magazine:
         return [article for article in Article.all if article.magazine == self]
 
     def contributors(self):
-        pass
+        return list({article.author for article in self.articles()})
 
     def article_titles(self):
-        pass
+        article_titles = [article.title for article in self.articles()]
+        return article_titles if article_titles else None
 
     def contributing_authors(self):
-        pass
+        authors = {}
+        list_of_authors = []
+
+        for article in self.articles():
+            if article.author in authors:
+                authors[article.author] += 1
+            else:
+                authors[article.author] = 1
+
+        for author in authors:
+            if authors[author] >= 2: 
+                list_of_authors.append(author) 
+
+        if (list_of_authors):
+            return list_of_authors
+        else:
+            return None
