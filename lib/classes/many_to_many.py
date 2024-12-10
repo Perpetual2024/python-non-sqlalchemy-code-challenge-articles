@@ -126,7 +126,7 @@ class Magazine:
             TypeError("Category must be a string")                            
 
     def articles(self):
-        pass
+        return [article for article in Article.all if article.magazine == self]
 
     def contributors(self):
         pass
