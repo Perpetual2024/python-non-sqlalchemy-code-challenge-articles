@@ -87,9 +87,14 @@ class Author:
             return None
 
 class Magazine:
+
+    all = []
+     
+
     def __init__(self, name, category):
         self.name = name
         self.category = category
+        Magazine.all.append(self)
 
     def articles(self):
         pass
